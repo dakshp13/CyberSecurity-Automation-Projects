@@ -14,7 +14,7 @@ allowListFile = “allow_list.txt”
 #Also use the .read() function to convert it into a string
 
 with open(allowListFile, “r”) as file:
-ipAddresses = file.read()
+	ipAddresses = file.read()
 
 #Use .split() function to convert it into a list
 
@@ -25,7 +25,7 @@ ipAddresses = ipAddresses.split()
 #If it is, then remove that element from the ipAddresses List
 
 for i in remove_list:
-if i in ipAddresses:
+	if i in ipAddresses:
 		ipAddresses.remove(i)
 
 #Once the new list is created, use the join() function to make it into a string
