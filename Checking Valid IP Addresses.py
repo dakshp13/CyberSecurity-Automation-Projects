@@ -1,19 +1,19 @@
-“““Developing an algorithm to help us automate a cybersecurity task. There is a file called the allow list which contains ip addresses, 
+"""Developing an algorithm to help us automate a cybersecurity task. There is a file called the allow list which contains ip addresses, 
 for private medical records. The ip addresses are linked to the employees. The allow list file shows who can access these records. 
 There is also a list that is pre made and is not a file, called remove list which shows who should not be able to access these records.
 We want to develop and algorithm to check all ip addresses, in the allow list file, and if they are also present in the remove list, 
-we must take them out of the allow list as those IP addresses should not have access to the medical records”””
+we must take them out of the allow list as those IP addresses should not have access to the medical records"""
 
-#file for allow list is “allow_list.txt
+#file for allow list is “allow_list.txt"
 
 #firstly create a variable for the file
 
-allowListFile = “allow_list.txt”
+allowListFile = "allow_list.txt"
 
 #Use a with statement to read the file as give it a name ipAddresses.
 #Also use the .read() function to convert it into a string
 
-with open(allowListFile, “r”) as file:
+with open(allowListFile, "r") as file:
 	ipAddresses = file.read()
 
 #Use .split() function to convert it into a list
@@ -30,10 +30,10 @@ for i in remove_list:
 
 #Once the new list is created, use the join() function to make it into a string
 
-ipAddresses = “\n”.join(ipAddresses)
+ipAddresses = "\n".join(ipAddresses)
 
 #Finally use the with statement again to overwrite all contents of the allowListFile
 #This will ensure that only valid IP addresses will have access to the records
 
-with open(allowListFile, “w”) as file:
+with open(allowListFile, "w") as file:
 	file.write(ipAddresses)
