@@ -29,17 +29,17 @@ logActivity = logActivity.split()
 
 
 for i in logActivity:
-if i == "Login failed" or i == "Unauthorised access":
-	suspiciousLogs.append(i)
+	if i == "Login failed" or i == "Unauthorised access":
+		suspiciousLogs.append(i)
 
-	#Now we have a list called suspiciousLogs that hold the possible suspicious strings
-	#We can print this information to the screen
+#Now we have a list called suspiciousLogs that hold the possible suspicious strings
+#We can print this information to the screen
 
-	print(suspiciousLogs)
+print(suspiciousLogs)
 
-	#Or we can make it back into a string and then into a file, and append is using “a”
+#Or we can make it back into a string and then into a file, and append it using “a”
 
-	suspiciousLogs = "\n".join(suspiciousLogs)
+suspiciousLogs = "\n".join(suspiciousLogs)
 
-	with open(suspiciouslogsFile, "a") as file:
-		file.write(suspiciousLogs)
+with open(suspiciouslogsFile, "a") as file:
+	file.write(suspiciousLogs)
